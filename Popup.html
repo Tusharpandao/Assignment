@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: transparent;
+    color: black;
+    border: 1px  solid wheat;
+    border-radius: 10px;
+  }
+  
+  input:focus {
+    background-color: transparent;
+    color:black;
+    outline: none;
+  }
+  
+
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #1A2440;
+    
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 10px;
+  }
+  
+  button:hover {
+    opacity:1;
+
+  }
+  
+
+  
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }
+  
+
+  .container {
+    padding: 16px;
+  }
+  
+  
+  .clearfix::after {
+    content: "";
+    clear: both;
+    
+    display: table;
+  }
+  
+  
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+      width: 100%;
+    }
+  }
+  #parent{
+    display: flex;
+    justify-content: center;
+  }
+  #parent .child{
+   
+   width: 41%;
+
+  }
+
+  
+    </style>
+</head>
+<body>
+    
+    <div id="parent">
+
+        <div class="child">
+            <img src="./Untitled-1 2.jpg" alt="" style=" width: 100%;  background: linear-gradient(0deg, rgba(26, 36, 64, 0.20) 0%, rgba(26, 36, 64, 0.20) 100%), linear-gradient(180deg, rgba(34, 48, 88, 0.00) 62.43%, #1B243F 100%),  lightgray 50% / cover no-repeat;  ">
+        </div>
+        <div class="child">
+            <form action="https://sheetdb.io/api/v1/1snm3bb8xgp6j" method="post" id="sheetdb-form" style="margin-left: 50px;" >
+              <div class="container">
+                <h1>Book Site Tour</h1>
+                <input type="text" placeholder="Full Name" name="data[Name]" required>
+            
+              
+                <input type="text" placeholder="Contact Number" name="data[Contact]" required>
+            
+                
+                <input type="email" placeholder="Email Address" name="data[Email]" required>
+            
+            
+                
+            
+                <div class="clearfix">
+                  <button type="submit" class="signupbtn">Book Now</button>
+                </div>
+              </div>
+            </form></div>
+
+
+    </div>
+
+    
+<script>
+
+    var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e=>{
+      e.preventDefault();
+  
+      fetch(form.action,{
+        method : "POST",
+        body : new FormData(document.getElementById('sheetdb-form')),
+  
+  
+      }).then(
+  
+        response =>response.json()
+      ).then((html)=>{
+        window.open('./Thanks.html','_blank');
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
